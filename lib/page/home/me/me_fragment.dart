@@ -176,14 +176,23 @@ class _MeFragmentState extends State<MeFragment>
                   ),
                 )),
             Positioned(
-                top: ScreenUtil().setHeight(213),
-                child: ClipOval(
-                  child: Image(
-                    image: AssetImage("assets/img/iocn_me_top.png"),
-                    width: ScreenUtil().setWidth(180),
-                    height: ScreenUtil().setHeight(196),
-                    fit: BoxFit.cover,
-                    colorBlendMode: BlendMode.srcIn,
+                top: ScreenUtil().setHeight(200),
+                child: Container(
+                  padding: EdgeInsets.all(ScreenUtil().setWidth(14)),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.all(
+                        Radius.circular(ScreenUtil().setWidth(107))),
+                    border: Border.all(width: 0, style: BorderStyle.none),
+                  ),
+                  child: ClipOval(
+                    child: Image(
+                      image: AssetImage("assets/img/iocn_me_top.png"),
+                      width: ScreenUtil().setWidth(180),
+                      height: ScreenUtil().setWidth(180),
+                      fit: BoxFit.cover,
+                      colorBlendMode: BlendMode.srcIn,
+                    ),
                   ),
                 ))
           ]),

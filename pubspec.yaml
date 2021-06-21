@@ -69,6 +69,7 @@ flutter:
     - assets/img/icon_me_select.png
     - assets/img/icon_lock_op.png
     - assets/img/icon_splash.png
+    - assets/img/icon_splash_bg.png
     - assets/img/ic_launcher.png
 
 flutter_intl:
