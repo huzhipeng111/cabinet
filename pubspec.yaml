@@ -32,12 +32,13 @@ dependencies:
   path_provider: ^0.5.0+1
   shared_preferences: ^0.5.6
   webview_flutter: ^0.3.19+9
+  flutter_webview_plugin: ^0.3.11
   qrscan: ^0.2.17
   provider: ^5.0.0
   fluttertoast: ^4.0.0
   url_launcher: ^5.4.2
   date_format: ^1.0.8
-  permission_handler: ^5.0.0+hotfix.3
+  permission_handler: ^5.0.1+1
   cupertino_icons: ^0.1.2
   flutter_screenutil: ^5.0.0
 
@@ -62,6 +63,13 @@ flutter:
     - assets/img/icon_device_empty.png
     - assets/img/icon_scan_qr_device_bg.png
     - assets/img/icon_scan_qr_device.png
+    - assets/img/icon_me_unselecte.png
+    - assets/img/icon_device_select.png
+    - assets/img/icon_device_unselecte.png
+    - assets/img/icon_me_select.png
+    - assets/img/icon_lock_op.png
+    - assets/img/icon_splash.png
+    - assets/img/ic_launcher.png
 
 flutter_intl:
   enabled: true

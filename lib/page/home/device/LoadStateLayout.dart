@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:cabinet/data/eventbus/deviceEvent.dart';
 import 'package:cabinet/data/login.dart';
 import 'package:cabinet/http/api.dart';
 import 'package:cabinet/http/http_request.dart';
@@ -72,7 +73,8 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
       width: ScreenUtil().screenWidth,
       alignment: Alignment.center,
       child: Container(
-        height: 80,
+        height: ScreenUtil().setHeight(240),
+        width: ScreenUtil().setWidth(320),
         padding: EdgeInsets.all(10),
         decoration: BoxDecoration(
             color: Color(0x88000000), borderRadius: BorderRadius.circular(6)),
@@ -93,13 +95,21 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Image.asset(
-            'assets/img/icon_scan_qr.png',
+            'assets/img/icon_device_empty.png',
             height: 80,
             width: 100,
           ),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+                top: ScreenUtil().setHeight(20)),
+          ),
           Text("加载失败，请重试"),
+          Padding(
+            padding: EdgeInsetsDirectional.only(
+                top: ScreenUtil().setHeight(60)),
+          ),
           RaisedButton(
-            color: Color(0xffbc2929),
+            color: MyColor.color_FFD200,
             onPressed: widget.errorRetry,
             child: Text(
               '重新加载',
@@ -155,7 +165,8 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
               height: ScreenUtil().setHeight(196),
               child: TextButton(
                 onPressed: () {
-                  doBand("test");
+                  // doBand("test2");
+                  Application.eventBus.fire(EventScan());
                 },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,

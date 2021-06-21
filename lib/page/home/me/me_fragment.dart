@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:cabinet/data/login.dart';
 import 'package:cabinet/theme/colors.dart';
 import 'package:cabinet/theme/dark_model.dart';
 import 'package:cabinet/theme/theme_model.dart';
@@ -17,6 +20,18 @@ class MeFragment extends StatefulWidget {
 
 class _MeFragmentState extends State<MeFragment>
     with AutomaticKeepAliveClientMixin {
+  var userName = "";
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    String info = Application.sp.getString(Config.SP_USER_INFO);
+    if (info != null && info.isNotEmpty) {
+      Map userMap = json.decode(info);
+      LoginData userEntity = new LoginData.fromJson(userMap);
+      userName = userEntity.userMail;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     var appTheme = Provider.of<ThemeModel>(context, listen: false);
@@ -58,7 +73,9 @@ class _MeFragmentState extends State<MeFragment>
                               ScreenUtil().setHeight(163),
                               ScreenUtil().setWidth(0),
                               ScreenUtil().setHeight(64)),
-                          child: Text("xxxxx"),
+                          child: Text(
+                              userName.isEmpty ? "" : userName
+                          ),
                         ),
                         Divider(
                           thickness: ScreenUtil().setHeight(20),
@@ -164,7 +181,7 @@ class _MeFragmentState extends State<MeFragment>
                   child: Image(
                     image: AssetImage("assets/img/iocn_me_top.png"),
                     width: ScreenUtil().setWidth(180),
-                    height: ScreenUtil().setHeight(180),
+                    height: ScreenUtil().setHeight(196),
                     fit: BoxFit.cover,
                     colorBlendMode: BlendMode.srcIn,
                   ),

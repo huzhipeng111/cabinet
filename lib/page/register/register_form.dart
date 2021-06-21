@@ -173,8 +173,7 @@ class RegisterFormState extends State<RegisterForm>
 
   void doRegister() {
     var data;
-    var userKey = _name + "(mailto:" + _name + ")";
-    data = {'nickname': "hzp", 'userMail': userKey, "password": _pwd};
+    data = {'nickname': "hzp", 'userMail': _name, "password": _pwd};
     print(data);
     HttpRequest.getInstance().post(Api.REGISTER, data: data,
         successCallBack: (data) {

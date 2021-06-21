@@ -15,6 +15,7 @@ import 'package:cabinet/utils/Config.dart';
 import 'package:cabinet/utils/common.dart';
 import 'package:cabinet/utils/login_event.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -91,8 +92,22 @@ class _SplashViewState extends State<SplashView> {
       // home: Tabs(),
       // initialRoute: '/',
       // onGenerateRoute: onGenerateRoute,
-      home: Container(
-        color: MyColor.color_FFD200,
+      home: Stack(
+        children: [
+          Image(
+              width: ScreenUtil().screenWidth,
+              height: ScreenUtil().screenHeight,
+              fit: BoxFit.fill,
+              image: AssetImage("assets/img/icon_splash.png")),
+          Container(
+              alignment: Alignment.topCenter,
+              margin: EdgeInsets.only(top: ScreenUtil().setHeight(420)),
+              child: Image(
+                width: ScreenUtil().setWidth(220),
+                height: ScreenUtil().setHeight(330),
+                image: AssetImage("assets/img/icon_splash_bg.png"),
+              ))
+        ],
       ),
     );
   }
@@ -127,8 +142,7 @@ class _SplashViewState extends State<SplashView> {
 //  登录
   doLogin(String _name, String _pwd) {
     var data;
-    var userKey = _name + "(mailto:" + _name + ")";
-    data = {'userKey': userKey, 'password': _pwd};
+    data = {'userkey': _name, 'password': _pwd};
     print("开始登录");
     HttpRequest.getInstance().post(Api.LOGIN, data: data,
         successCallBack: (data) {

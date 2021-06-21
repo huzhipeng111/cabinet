@@ -5,6 +5,8 @@ import 'package:cabinet/http/api.dart';
 import 'package:cabinet/http/http_request.dart';
 import 'package:cabinet/page/register/regisger_fragment.dart';
 import 'package:cabinet/page/tabs.dart';
+import 'package:cabinet/page/web/WebPage.dart';
+import 'package:cabinet/page/web/WebViewPage.dart';
 import 'package:cabinet/theme/colors.dart';
 import 'package:cabinet/theme/dark_model.dart';
 import 'package:cabinet/theme/theme_model.dart';
@@ -243,7 +245,12 @@ class LoginFormState extends State<LoginForm>
                             color: MyColor.color_7E838F),
                       ),
                       TextButton(
-                          onPressed: null,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => WebPage(url:"https://www.baidu.com/", title: '用户协议')),
+                            );
+                          },
                           child: Text(
                             "《用户协议》",
                             style: TextStyle(
@@ -263,8 +270,7 @@ class LoginFormState extends State<LoginForm>
 
   void doLogin() {
     var data;
-    var userKey = _name + "(mailto:" + _name + ")";
-    data = {"userKey": userKey, "password": _pwd};
+    data = {"userkey": _name, "password": _pwd};
     print(data);
     HttpRequest.getInstance().post(
         Api.LOGIN,

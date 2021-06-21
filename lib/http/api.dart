@@ -5,9 +5,6 @@ class Api {
 
   static const String GET_DEVICES = "uiduser/devices";
 
-  //退出登录
-  static const String LOGIN_OUT_JSON = 'user/logout/json';
-
   //注册
   static const String REGISTER = "uiduser/register";
 }

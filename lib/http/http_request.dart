@@ -55,8 +55,12 @@ class HttpRequest {
       Function errorCallBack}) async {
     Response response;
     try {
+      print("网络请求参数为：");
+      print(url);
+      print(data.toString());
       response = await dio.get(url, queryParameters: data, options: options, cancelToken: cancelToken);
       if (response.data != null) {
+        print("网络请求返回的结果为：");
         print(response.data.toString());
         BaseResponse baseResponse =
         BaseResponse.fromJson(new Map<String, dynamic>.from(response.data));
@@ -94,10 +98,13 @@ class HttpRequest {
       Function errorCallBack}) async {
     Response response;
     try {
-      print("参数为：");
+      print("网络请求参数为：");
+      print(url);
       print(data.toString());
       response = await dio.post(url, data: data);
       if (response.data != null) {
+        print("网络请求返回的结果为：");
+        print(response.data.toString());
         BaseResponse baseResponse =
         BaseResponse.fromJson(new Map<String, dynamic>.from(response.data));
         if (baseResponse != null) {
