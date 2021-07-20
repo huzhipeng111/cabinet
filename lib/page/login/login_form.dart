@@ -177,7 +177,7 @@ class LoginFormState extends State<LoginForm>
                         S.of(context).login,
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(30),
-                            color: MyColor.color_312f23),
+                            color: MyColor.color_white),
                       ),
                     )),
                 Container(
@@ -284,7 +284,9 @@ class LoginFormState extends State<LoginForm>
         MaterialPageRoute(builder: (context) => Tabs()),
             (route) => route == null,
       );
-    }, errorCallBack: (code, msg) {});
+    }, errorCallBack: (code, msg) {
+          CommonUtils.toast(code.toString() + " " + msg);
+    });
   }
 
   void saveUserInfo(data) {

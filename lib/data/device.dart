@@ -54,7 +54,7 @@ class DeviceProvider with ChangeNotifier{
 }
 
 class ShadowData{
-  int lock;
+  List lock;
   ShadowData.fromJson(Map<String, dynamic> json1) {
     lock = json1['lock'];
   }

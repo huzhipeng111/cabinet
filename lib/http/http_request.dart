@@ -33,7 +33,7 @@ class HttpRequest {
       // 访问url
       baseUrl: _baseUrl,
       // 连接超时时间
-      connectTimeout: 5000,
+      connectTimeout: 10000,
       // 响应流收到数据的间隔
       receiveTimeout: 15000,
       // http请求头

@@ -4,6 +4,7 @@ import 'dart:ffi';
 import 'package:cabinet/data/device.dart';
 import 'package:cabinet/data/eventbus/deviceEvent.dart';
 import 'package:cabinet/data/login.dart';
+import 'package:cabinet/generated/l10n.dart';
 import 'package:cabinet/http/api.dart';
 import 'package:cabinet/http/http_request.dart';
 import 'package:cabinet/theme/colors.dart';
@@ -184,13 +185,120 @@ class _DeviceFragmentState extends State<DeviceFragment>
                                                   start: ScreenUtil().setWidth(45)),
                                             ),
                                             Visibility(
-                                              visible: deviceDatas[index].shadow.lock == 0,
+                                              // visible: deviceDatas[index].shadow.lock == 0,
+                                              visible: true,
                                               child: Container(
                                                 width: ScreenUtil().setWidth(134),
                                                 height: ScreenUtil().setHeight(70),
                                                 child: ElevatedButton(
                                                   onPressed: () {
-                                                    unLockDevice(deviceDatas[index]);
+                                                    showModalBottomSheet(
+                                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.only(
+                                                            topLeft : Radius.circular(10),
+                                                            topRight : Radius.circular(10),
+                                                            bottomLeft : Radius.circular(0),
+                                                            bottomRight : Radius.circular(0))),
+                                                        context: context,
+                                                        builder: (BuildContext context) {
+                                                      return Container(
+                                                        height:ScreenUtil().setHeight(674),//对话框高度就是此高度
+                                                          child: Column(
+                                                            children: [
+                                                              Expanded(
+                                                                flex: 1, child: Text(""),
+                                                              ),
+                                                              Row(
+                                                                children: [
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional.only(
+                                                                        start: ScreenUtil().setWidth(74)),
+                                                                  ),
+                                                                  Image(
+                                                                    image: AssetImage(
+                                                                        "assets/img/icon_device_default.png"),
+                                                                    height: ScreenUtil().setHeight(120),
+                                                                    width: ScreenUtil().setWidth(148),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional.only(
+                                                                        start: ScreenUtil().setWidth(30)),
+                                                                  ),
+                                                                  Container(
+                                                                    width: ScreenUtil().setWidth(220),
+                                                                    child:
+                                                                    Text(deviceDatas[index].deviceId),
+                                                                  ),
+                                                                  Container(
+                                                                    alignment: Alignment.center,
+                                                                    width: ScreenUtil().setWidth(74),
+                                                                    height: ScreenUtil().setHeight(40),
+                                                                    decoration: BoxDecoration(
+                                                                        color: deviceDatas[index]
+                                                                            .shadow
+                                                                            .lock ==
+                                                                            0
+                                                                            ? MyColor.color_34BD15
+                                                                            : MyColor.color_FF6418,
+                                                                        borderRadius: BorderRadius.circular(
+                                                                            ScreenUtil().setWidth(6))),
+                                                                    child: Text(
+                                                                      deviceDatas[index].shadow.lock == 0
+                                                                          ? "关门"
+                                                                          : "开门",
+                                                                      style: TextStyle(
+                                                                        fontSize: ScreenUtil().setSp(20),
+                                                                        color: Colors.white,
+                                                                      ),
+                                                                    ),
+                                                                  )
+                                                                ],
+                                                              ),
+                                                              Container(
+                                                                margin: EdgeInsets.fromLTRB(
+                                                                    ScreenUtil().setWidth(85),
+                                                                    ScreenUtil().setHeight(50),
+                                                                    ScreenUtil().setWidth(85),
+                                                                    ScreenUtil().setHeight(0)),
+                                                                child: Divider(
+                                                                  thickness: ScreenUtil().setHeight(1),
+                                                                  color: MyColor.color_E1E3E6,
+                                                                ),
+                                                              ),
+                                                              Container(
+                                                                  margin: EdgeInsets.fromLTRB(
+                                                                      ScreenUtil().setWidth(40),
+                                                                      ScreenUtil().setWidth(0),
+                                                                      ScreenUtil().setWidth(40),
+                                                                      ScreenUtil().setWidth(0)),
+                                                                  width: ScreenUtil().setWidth(679),
+                                                                  decoration: BoxDecoration(
+                                                                    image: DecorationImage(
+                                                                        image: AssetImage("assets/img/icon_login_op_bg.png")),
+                                                                  ),
+                                                                  height: ScreenUtil().setHeight(196),
+                                                                  child: TextButton(
+                                                                    onPressed: () {
+
+                                                                    },
+                                                                    child: Text(
+                                                                      S.of(context).unlock,
+                                                                      style: TextStyle(
+                                                                          fontSize: ScreenUtil().setSp(30),
+                                                                          color: MyColor.color_white),
+                                                                    ),
+                                                                  )),
+                                                              Expanded(
+                                                                flex: 1, child: Text(""),
+                                                              ),
+                                                              Divider(
+                                                                  color: MyColor.color_E1E3E6,
+                                                                  height: ScreenUtil().setHeight(1)),
+                                                            ],
+                                                          )
+
+                                                      );
+                                                    });
+                                                    // unLockDevice(deviceDatas[index]);
                                                   },
                                                   style: ButtonStyle(
                                                     padding:

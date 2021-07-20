@@ -61,5 +61,6 @@
   "release_refresh" : "释放刷新",
   "complete_refresh" : "刷新完成",
   "network_error": "网络异常，点击重试!",
-  "no_data": "没有数据，请重试!"
+  "no_data": "没有数据，请重试!",
+  "unlock": "解锁"
 }

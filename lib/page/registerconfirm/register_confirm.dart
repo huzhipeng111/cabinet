@@ -75,7 +75,7 @@ class _RegisterConfirmFragmentState extends State<RegisterConfirmFragment>
                                 "我已确认",
                                 style: TextStyle(
                                     fontSize: ScreenUtil().setSp(30),
-                                    color: MyColor.color_312f23),
+                                    color: MyColor.color_white),
                               ),
                             )),
                       ],

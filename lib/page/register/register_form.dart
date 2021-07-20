@@ -160,7 +160,7 @@ class RegisterFormState extends State<RegisterForm>
                         S.of(context).register,
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(30),
-                            color: MyColor.color_312f23),
+                            color: MyColor.color_white),
                       ),
                     )),
               ],

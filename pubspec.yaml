@@ -71,6 +71,14 @@ flutter:
     - assets/img/icon_splash.png
     - assets/img/icon_splash_bg.png
     - assets/img/ic_launcher.png
+    - assets/img/icon_avater_defalut.png
+    - assets/img/icon_me_select.png
+    - assets/img/icon_device_unselecte.png
+    - assets/img/icon_update.png
+    - assets/img/icon_service.png
+    - assets/img/icon_introduce.png
+    - assets/img/icon_guizi_info.png
+    - assets/img/icon_help.png
 
 flutter_intl:
   enabled: true

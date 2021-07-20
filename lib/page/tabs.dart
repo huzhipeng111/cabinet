@@ -11,6 +11,7 @@ import 'package:cabinet/page/home/me/me_fragment.dart';
 import 'package:cabinet/theme/colors.dart';
 import 'package:cabinet/theme/theme_model.dart';
 import 'package:cabinet/utils/Config.dart';
+import 'package:cabinet/utils/common.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -114,6 +115,7 @@ class _TabsState extends State<Tabs> {
       HttpRequest.getInstance().options.headers = {"token": userEntity.token};
       HttpRequest.getInstance().get(Api.GET_DEVICES, successCallBack: (data) {
         if(data == null) {
+          print("返回null........");
           deviceProvider.updateDevice(null);
           Application.eventBus.fire(DeviceEvent());
         } else {
@@ -130,6 +132,7 @@ class _TabsState extends State<Tabs> {
           Application.eventBus.fire(DeviceEvent());
         }
       }, errorCallBack: (code, msg) {
+        CommonUtils.toast(code.toString() + " " + msg);
         deviceProvider.updateDevice(null);
         Application.eventBus.fire(DeviceEvent());
       });

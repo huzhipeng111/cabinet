@@ -45,7 +45,7 @@ class _MeFragmentState extends State<MeFragment>
               left: 0,
               top: 0,
               child: Image(
-                image: AssetImage("assets/img/iocn_me_top.png"),
+                image: AssetImage("assets/img/icon_login_bg.png"),
                 width: ScreenUtil().setWidth(750),
                 height: ScreenUtil().setHeight(364),
                 fit: BoxFit.fill,
@@ -187,7 +187,7 @@ class _MeFragmentState extends State<MeFragment>
                   ),
                   child: ClipOval(
                     child: Image(
-                      image: AssetImage("assets/img/iocn_me_top.png"),
+                      image: AssetImage("assets/img/icon_avater_defalut.png"),
                       width: ScreenUtil().setWidth(180),
                       height: ScreenUtil().setWidth(180),
                       fit: BoxFit.cover,

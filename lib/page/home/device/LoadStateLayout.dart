@@ -149,15 +149,19 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
                 ScreenUtil().setWidth(52),
                 ScreenUtil().setWidth(0),
                 ScreenUtil().setWidth(0)),
-            child: Text('暂无设备'),
+            child: Text(
+              '暂无设备',
+              style: TextStyle(
+                fontSize: ScreenUtil().setSp(30),
+                color: MyColor.color_999EAD),),
           ),
           Container(
               margin: EdgeInsets.fromLTRB(
-                  ScreenUtil().setWidth(0),
+                  ScreenUtil().setWidth(35),
                   ScreenUtil().setWidth(117),
-                  ScreenUtil().setWidth(40),
+                  ScreenUtil().setWidth(35),
                   ScreenUtil().setWidth(0)),
-              width: ScreenUtil().setWidth(679),
+              width: ScreenUtil().setWidth(680),
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/img/icon_scan_qr_device_bg.png")),
@@ -184,7 +188,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
                         "扫码添加",
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(30),
-                            color: MyColor.color_312f23),
+                            color: MyColor.color_white),
                       ),
                     ),
                   ],

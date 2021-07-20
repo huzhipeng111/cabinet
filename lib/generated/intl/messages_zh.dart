@@ -78,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "theme_choose" : MessageLookupByLibrary.simpleMessage("主题颜色选择"),
     "theme_tips" : MessageLookupByLibrary.simpleMessage("夜间模式下不可以更改主题嗷~"),
     "top" : MessageLookupByLibrary.simpleMessage("置顶"),
+    "unlock" : MessageLookupByLibrary.simpleMessage("解锁"),
     "up_refresh" : MessageLookupByLibrary.simpleMessage("上拉刷新"),
     "update_time" : MessageLookupByLibrary.simpleMessage("更新时间: "),
     "username" : MessageLookupByLibrary.simpleMessage("请输入用户名"),

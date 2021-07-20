@@ -79,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "theme_choose" : MessageLookupByLibrary.simpleMessage("Theme Choose"),
     "theme_tips" : MessageLookupByLibrary.simpleMessage("Cannot be changed in night mode~"),
     "top" : MessageLookupByLibrary.simpleMessage("Top"),
+    "unlock" : MessageLookupByLibrary.simpleMessage("unlock"),
     "up_refresh" : MessageLookupByLibrary.simpleMessage("Up refresh"),
     "update_time" : MessageLookupByLibrary.simpleMessage("update time: "),
     "username" : MessageLookupByLibrary.simpleMessage("Input username"),

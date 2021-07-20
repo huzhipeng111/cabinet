@@ -8,6 +8,7 @@ class MyColor{
   static const Color color_312f23 = Color(0xff312f23);
   static const Color color_515561 = Color(0xff515561);
   static const Color color_FFD200 = Color(0xffFFD200);
+  static const Color color_white = Color(0xffFFffff);
   static const Color color_F5F6F7 = Color(0xffF5F6F7);
   static const Color color_34BD15 = Color(0xff34BD15);
   static const Color color_FF6418 = Color(0xffFF6418);
