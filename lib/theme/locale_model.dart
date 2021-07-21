@@ -37,6 +37,8 @@ class LocaleModel with ChangeNotifier {
         return '中文';
       case 2:
         return 'English';
+      case 3:
+        return 'Deutsch';
       default:
         return '';
     }

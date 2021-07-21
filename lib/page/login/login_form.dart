@@ -56,22 +56,22 @@ class LoginFormState extends State<LoginForm>
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       Text(
-                        "登录",
+                        S.of(context).login,
                         style: TextStyle(
                             color: MyColor.color_2B2D33,
                             fontSize: ScreenUtil().setSp(48),
                             fontWeight: FontWeight.bold),
                       ),
-                      Container(
-                        child: Text(
-                          "LOGIN",
-                          style: TextStyle(
-                              color: Color(0xff7E838F),
-                              fontSize: ScreenUtil().setSp(30)),
-                        ),
-                        margin: EdgeInsets.fromLTRB(ScreenUtil().setWidth(16), 0,
-                            0, ScreenUtil().setWidth(4)),
-                      )
+                      // Container(
+                      //   child: Text(
+                      //     "LOGIN",
+                      //     style: TextStyle(
+                      //         color: Color(0xff7E838F),
+                      //         fontSize: ScreenUtil().setSp(30)),
+                      //   ),
+                      //   margin: EdgeInsets.fromLTRB(ScreenUtil().setWidth(16), 0,
+                      //       0, ScreenUtil().setWidth(4)),
+                      // )
                     ],
                   ),
                 ),
@@ -88,7 +88,7 @@ class LoginFormState extends State<LoginForm>
                     cursorColor: appTheme.themeColor,
                     decoration: InputDecoration(
                         filled: true,
-                        hintText: S.of(context).username,
+                        hintText: S.of(context).enter_email,
                         hintStyle: TextStyle(color: MyColor.color_999EAD),
                         fillColor: Colors.transparent,
                         enabledBorder: UnderlineInputBorder(
@@ -120,7 +120,8 @@ class LoginFormState extends State<LoginForm>
                     obscureText: true,
                     decoration: InputDecoration(
                         filled: true,
-                        hintText: S.of(context).password,
+                        hintText: S.of(context).enter_password,
+                        hintStyle: TextStyle(color: MyColor.color_999EAD),
                         fillColor: Colors.transparent,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: MyColor.color_E1E3E6),
@@ -144,7 +145,7 @@ class LoginFormState extends State<LoginForm>
                       EdgeInsets.fromLTRB(0, ScreenUtil().setHeight(47), 0, 0),
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    "忘记密码？",
+                    S.of(context).forget_password,
                     style: TextStyle(
                         color: MyColor.color_7E838F,
                         fontSize: ScreenUtil().setSp(26)),
@@ -216,7 +217,7 @@ class LoginFormState extends State<LoginForm>
                           ),
                         ),
                         Text(
-                          "没有账号，去注册",
+                          S.of(context).no_account,
                           style: TextStyle(
                               color: MyColor.color_515561,
                               fontSize: ScreenUtil().setSp(28),
@@ -239,7 +240,7 @@ class LoginFormState extends State<LoginForm>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text(
-                        "登录即代表同意六勤智能柜",
+                        S.of(context).login_means_user_agreement,
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(24),
                             color: MyColor.color_7E838F),
@@ -248,11 +249,11 @@ class LoginFormState extends State<LoginForm>
                           onPressed: () {
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => WebPage(url:"https://www.baidu.com/", title: '用户协议')),
+                              MaterialPageRoute(builder: (context) => WebPage(url:"https://www.baidu.com/", title: S.of(context).login_means_user_agreement)),
                             );
                           },
                           child: Text(
-                            "《用户协议》",
+                            S.of(context).user_agreement,
                             style: TextStyle(
                                 fontSize: ScreenUtil().setSp(24),
                                 color: MyColor.color_FFD200),

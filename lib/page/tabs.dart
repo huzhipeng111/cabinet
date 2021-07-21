@@ -72,7 +72,7 @@ class _TabsState extends State<Tabs> {
                         width: ScreenUtil().setWidth(46),
                         height: ScreenUtil().setHeight(40),
                         image: AssetImage("assets/img/icon_device_select.png")),
-                    title: Text(S.of(context).tab_device)),
+                    title: Text(S.of(context).menu)),
                 BottomNavigationBarItem(
                     icon: Image(
                         width: ScreenUtil().setWidth(34),
@@ -82,7 +82,7 @@ class _TabsState extends State<Tabs> {
                         width: ScreenUtil().setWidth(34),
                         height: ScreenUtil().setHeight(38),
                         image: AssetImage("assets/img/icon_me_select.png")),
-                    title: Text(S.of(context).tab_me))
+                    title: Text(S.of(context).my_account))
               ],
             ),
           ),
@@ -127,6 +127,7 @@ class _TabsState extends State<Tabs> {
           devicesJson.forEach((element) {
             deviceDatas.add(DeviceData.fromJson(element));
           });
+          // deviceDatas[0].shadow.lock[0] = 0;
           deviceProvider.updateDevice(deviceDatas);
           print("发送eventbus");
           Application.eventBus.fire(DeviceEvent());

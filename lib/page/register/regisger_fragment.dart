@@ -1,3 +1,4 @@
+import 'package:cabinet/generated/l10n.dart';
 import 'package:cabinet/page/login/login_form.dart';
 import 'package:cabinet/page/register/register_form.dart';
 import 'package:cabinet/theme/colors.dart';
@@ -28,7 +29,7 @@ class _RegisterFragmentState extends State<RegisterFragment>
                   backgroundColor: Colors.white,
                   elevation: 1,
                   centerTitle: true,
-                  title: Text("注册", style: TextStyle(color: MyColor.color_2B2D33, fontSize: ScreenUtil().setSp(36))),
+                  title: Text(S.of(context).register, style: TextStyle(color: MyColor.color_2B2D33, fontSize: ScreenUtil().setSp(36))),
                   leading: IconButton(
                     icon: Icon(Icons.arrow_back, color: MyColor.color_2B2D33),
                     onPressed: () {

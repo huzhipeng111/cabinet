@@ -1,6 +1,8 @@
 import 'dart:convert';
 
 import 'package:cabinet/data/login.dart';
+import 'package:cabinet/generated/l10n.dart';
+import 'package:cabinet/page/set/switch_lauguage_fragment.dart';
 import 'package:cabinet/theme/colors.dart';
 import 'package:cabinet/theme/dark_model.dart';
 import 'package:cabinet/theme/theme_model.dart';
@@ -21,6 +23,7 @@ class MeFragment extends StatefulWidget {
 class _MeFragmentState extends State<MeFragment>
     with AutomaticKeepAliveClientMixin {
   var userName = "";
+
   @override
   void initState() {
     // TODO: implement initState
@@ -32,6 +35,7 @@ class _MeFragmentState extends State<MeFragment>
       userName = userEntity.userMail;
     }
   }
+
   @override
   Widget build(BuildContext context) {
     var appTheme = Provider.of<ThemeModel>(context, listen: false);
@@ -73,51 +77,367 @@ class _MeFragmentState extends State<MeFragment>
                               ScreenUtil().setHeight(163),
                               ScreenUtil().setWidth(0),
                               ScreenUtil().setHeight(64)),
-                          child: Text(
-                              userName.isEmpty ? "" : userName
-                          ),
+                          child: Text(userName.isEmpty ? "" : userName),
                         ),
                         Divider(
                           thickness: ScreenUtil().setHeight(20),
                           color: MyColor.color_E1E3E6,
                         ),
                         Container(
-                          height: ScreenUtil().setHeight(119),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Container(
-                                margin: EdgeInsets.fromLTRB(
-                                    ScreenUtil().setWidth(85),
-                                    ScreenUtil().setHeight(0),
-                                    ScreenUtil().setWidth(0),
-                                    ScreenUtil().setHeight(0)),
-                                child: Image(
-                                  image: AssetImage(
-                                      "assets/img/icon_user_guide.png"),
-                                  width: ScreenUtil().setWidth(30),
-                                  height: ScreenUtil().setHeight(36),
-                                  fit: BoxFit.fill,
-                                  colorBlendMode: BlendMode.srcIn,
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
                                 ),
-                              ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(
-                                    ScreenUtil().setWidth(23),
-                                    ScreenUtil().setHeight(0),
-                                    ScreenUtil().setWidth(0),
-                                    ScreenUtil().setHeight(0)),
-                                child: Text(
-                                  "使用手册",
-                                  style: TextStyle(
-                                    color: MyColor.color_2B2D33,
-                                    fontSize: ScreenUtil().setSp(28),
-                                  ),
-                                ),
-                              )
-                            ],
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_user_guide.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).user_manual,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0),
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0)),
+                          child: Divider(
+                            thickness: ScreenUtil().setHeight(1),
+                            color: MyColor.color_E1E3E6,
                           ),
                         ),
+                        Container(
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_guizi_info.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).drawer_infomations,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0),
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0)),
+                          child: Divider(
+                            thickness: ScreenUtil().setHeight(1),
+                            color: MyColor.color_E1E3E6,
+                          ),
+                        ),
+                        Container(
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_introduce.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).introduction_bullbox_function,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0),
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0)),
+                          child: Divider(
+                            thickness: ScreenUtil().setHeight(1),
+                            color: MyColor.color_E1E3E6,
+                          ),
+                        ),
+                        Container(
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_service.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).service_key_infomation_bullbox,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0),
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0)),
+                          child: Divider(
+                            thickness: ScreenUtil().setHeight(1),
+                            color: MyColor.color_E1E3E6,
+                          ),
+                        ),
+                        Container(
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_update.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).update,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
+                        Container(
+                          margin: EdgeInsets.fromLTRB(
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0),
+                              ScreenUtil().setWidth(85),
+                              ScreenUtil().setHeight(0)),
+                          child: Divider(
+                            thickness: ScreenUtil().setHeight(1),
+                            color: MyColor.color_E1E3E6,
+                          ),
+                        ),
+                        Container(
+                            height: ScreenUtil().setHeight(70),
+                            child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ChooseLanguageFragment()),
+                                  );
+                                },
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(85),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Image(
+                                        image: AssetImage(
+                                            "assets/img/icon_user_guide.png"),
+                                        width: ScreenUtil().setWidth(30),
+                                        height: ScreenUtil().setHeight(36),
+                                        fit: BoxFit.fill,
+                                        colorBlendMode: BlendMode.srcIn,
+                                      ),
+                                    ),
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(
+                                          ScreenUtil().setWidth(23),
+                                          ScreenUtil().setHeight(0),
+                                          ScreenUtil().setWidth(0),
+                                          ScreenUtil().setHeight(0)),
+                                      child: Text(
+                                        S.of(context).select_lauguage,
+                                        style: TextStyle(
+                                          color: MyColor.color_2B2D33,
+                                          fontSize: ScreenUtil().setSp(28),
+                                        ),
+                                      ),
+                                    )
+                                  ],
+                                ))),
                         Container(
                           margin: EdgeInsets.fromLTRB(
                               ScreenUtil().setWidth(85),
@@ -136,7 +456,7 @@ class _MeFragmentState extends State<MeFragment>
                         Container(
                           margin: EdgeInsets.fromLTRB(
                               ScreenUtil().setWidth(85),
-                              ScreenUtil().setWidth(440),
+                              ScreenUtil().setWidth(60),
                               ScreenUtil().setWidth(85),
                               ScreenUtil().setWidth(0)),
                           width: ScreenUtil().setWidth(580),
@@ -147,23 +467,25 @@ class _MeFragmentState extends State<MeFragment>
                               Application.sp.putString(Config.SP_USER_INFO, "");
                               Navigator.pushAndRemoveUntil(
                                 context,
-                                MaterialPageRoute(builder: (context) => SplashView()),
-                                    (route) => route == null,
+                                MaterialPageRoute(
+                                    builder: (context) => SplashView()),
+                                (route) => route == null,
                               );
                             },
                             style: ButtonStyle(
-                              backgroundColor: MaterialStateProperty.all(Colors.white),
+                              backgroundColor:
+                                  MaterialStateProperty.all(Colors.white),
                               elevation: MaterialStateProperty.all(0),
-                              side: MaterialStateProperty.all(
-                                  BorderSide(width: 1, color: MyColor.color_E1E3E6)),
+                              side: MaterialStateProperty.all(BorderSide(
+                                  width: 1, color: MyColor.color_E1E3E6)),
                             ),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: <Widget>[
                                 Text(
-                                  "退出登录",
+                                  S.of(context).logout,
                                   style: TextStyle(
-                                      color: MyColor.color_515561,
+                                      color: MyColor.color_FF6418,
                                       fontSize: ScreenUtil().setSp(28),
                                       decoration: TextDecoration.none),
                                 ),

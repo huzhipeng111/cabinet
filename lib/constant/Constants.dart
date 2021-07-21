@@ -21,6 +21,6 @@ class Constants {
   static const FontList = ['normal', 'kuaile'];
 
   // 语言列表
-  static const LocaleList = ['', 'zh-CN', 'en'];
+  static const LocaleList = ['', 'zh-CN', 'en', 'de'];
 
 }

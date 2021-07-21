@@ -113,7 +113,7 @@ class _MyAppState extends State<MyApp> {
               ],
               // 设置中文为首选项
               supportedLocales: [
-                const Locale('zh', ''),
+                const Locale('de', ''),
                 ...S.delegate.supportedLocales
               ],
               home: SplashView(),

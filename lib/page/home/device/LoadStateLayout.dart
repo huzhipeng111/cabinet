@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:cabinet/data/eventbus/deviceEvent.dart';
 import 'package:cabinet/data/login.dart';
+import 'package:cabinet/generated/l10n.dart';
 import 'package:cabinet/http/api.dart';
 import 'package:cabinet/http/http_request.dart';
 import 'package:cabinet/theme/colors.dart';
@@ -80,7 +81,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
             color: Color(0x88000000), borderRadius: BorderRadius.circular(6)),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: <Widget>[CircularProgressIndicator(), Text('正在加载')],
+          children: <Widget>[CircularProgressIndicator(), Text(S.of(context).loading)],
         ),
       ),
     );
@@ -103,7 +104,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
             padding: EdgeInsetsDirectional.only(
                 top: ScreenUtil().setHeight(20)),
           ),
-          Text("加载失败，请重试"),
+          Text(S.of(context).failed_to_load_please_try_again),
           Padding(
             padding: EdgeInsetsDirectional.only(
                 top: ScreenUtil().setHeight(60)),
@@ -112,7 +113,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
             color: MyColor.color_FFD200,
             onPressed: widget.errorRetry,
             child: Text(
-              '重新加载',
+              S.of(context).reload,
               style: TextStyle(color: Colors.white),
             ),
           )
@@ -150,7 +151,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
                 ScreenUtil().setWidth(0),
                 ScreenUtil().setWidth(0)),
             child: Text(
-              '暂无设备',
+              S.of(context).no_equipment_available,
               style: TextStyle(
                 fontSize: ScreenUtil().setSp(30),
                 color: MyColor.color_999EAD),),
@@ -185,7 +186,7 @@ class _LoadStateLayoutState extends State<LoadStateLayout> {
                     Padding(
                       padding: EdgeInsetsDirectional.only(start: ScreenUtil().setWidth(19)),
                       child: Text(
-                        "扫码添加",
+                        S.of(context).scan_code_to_add,
                         style: TextStyle(
                             fontSize: ScreenUtil().setSp(30),
                             color: MyColor.color_white),

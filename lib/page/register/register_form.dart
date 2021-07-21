@@ -50,7 +50,7 @@ class RegisterFormState extends State<RegisterForm>
                     keyboardType: TextInputType.emailAddress,
                     decoration: InputDecoration(
                         filled: true,
-                        hintText: S.of(context).username,
+                        hintText: S.of(context).enter_email,
                         hintStyle: TextStyle(color: MyColor.color_999EAD),
                         fillColor: Colors.transparent,
                         enabledBorder: UnderlineInputBorder(
@@ -82,7 +82,7 @@ class RegisterFormState extends State<RegisterForm>
                     obscureText: true,
                     decoration: InputDecoration(
                         filled: true,
-                        hintText: S.of(context).password,
+                        hintText: S.of(context).enter_password,
                         fillColor: Colors.transparent,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: MyColor.color_E1E3E6),
@@ -113,7 +113,7 @@ class RegisterFormState extends State<RegisterForm>
                     obscureText: true,
                     decoration: InputDecoration(
                         filled: true,
-                        hintText: S.of(context).password,
+                        hintText: S.of(context).please_enter_password_again,
                         fillColor: Colors.transparent,
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: MyColor.color_E1E3E6),
@@ -145,14 +145,14 @@ class RegisterFormState extends State<RegisterForm>
                     child: TextButton(
                       onPressed: () {
                         if (_name == null || _name.isEmpty) {
-                          CommonUtils.toast(S.of(context).username);
+                          CommonUtils.toast(S.of(context).please_enter_the_email_you_want_to_register_with);
                           return;
                         }
                         if (_pwd == null ||
                             _pwd.isEmpty ||
                             _pwd2 == null ||
                             _pwd2.isEmpty) {
-                          CommonUtils.toast(S.of(context).password);
+                          CommonUtils.toast(S.of(context).please_enter_password_to_register);
                         }
                         doRegister();
                       },

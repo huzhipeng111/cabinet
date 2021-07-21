@@ -12,4 +12,7 @@ class MyColor{
   static const Color color_F5F6F7 = Color(0xffF5F6F7);
   static const Color color_34BD15 = Color(0xff34BD15);
   static const Color color_FF6418 = Color(0xffFF6418);
+  static const Color color_0E5C67 = Color(0xff0E5C67);
+  static const Color color_F5F7FA = Color(0xffF5F7FA);
+  static const Color color_86888F = Color(0xff86888F);
 }
