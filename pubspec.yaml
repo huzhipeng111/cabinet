@@ -41,6 +41,8 @@ dependencies:
   permission_handler: ^5.0.1+1
   cupertino_icons: ^0.1.2
   flutter_screenutil: ^5.0.0
+#  scan: 0.0.7
+#  images_picker: 0.0.8
 
 dev_dependencies:
   flutter_test:

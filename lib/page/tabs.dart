@@ -128,6 +128,7 @@ class _TabsState extends State<Tabs> {
             deviceDatas.add(DeviceData.fromJson(element));
           });
           // deviceDatas[0].shadow.lock[0] = 0;
+          // deviceDatas[0].status = 1;
           deviceProvider.updateDevice(deviceDatas);
           print("发送eventbus");
           Application.eventBus.fire(DeviceEvent());

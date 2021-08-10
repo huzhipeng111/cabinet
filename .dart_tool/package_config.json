@@ -243,7 +243,7 @@
     },
     {
       "name": "process",
-      "rootUri": "file:///Users/hzp/code/flutter/.pub-cache/hosted/pub.flutter-io.cn/process-4.2.1",
+      "rootUri": "file:///Users/hzp/code/flutter/.pub-cache/hosted/pub.flutter-io.cn/process-4.2.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -399,7 +399,7 @@
     },
     {
       "name": "win32",
-      "rootUri": "file:///Users/hzp/code/flutter/.pub-cache/hosted/pub.flutter-io.cn/win32-2.1.5",
+      "rootUri": "file:///Users/hzp/code/flutter/.pub-cache/hosted/pub.flutter-io.cn/win32-2.2.5",
       "packageUri": "lib/",
       "languageVersion": "2.13"
     },
@@ -416,7 +416,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2021-07-20T13:19:21.978043Z",
+  "generated": "2021-08-10T02:24:03.336023Z",
   "generator": "pub",
   "generatorVersion": "2.13.3"
 }
